@@ -10,12 +10,3 @@
 <?php
 
 //traits Logger
-
-trait Logger
-{
-    public function log($message)
-    {
-        // date formatée
-        echo "[LOG] " . date('Y-m-d H:i:s') . " - " . $message . "<br>";
-    }
-}

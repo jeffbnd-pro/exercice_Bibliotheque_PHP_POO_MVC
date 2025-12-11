@@ -9,10 +9,7 @@
 
 
 <?php
-interface LoggerInterface
-{
-    public function executer();
-}
+
 
 
 
