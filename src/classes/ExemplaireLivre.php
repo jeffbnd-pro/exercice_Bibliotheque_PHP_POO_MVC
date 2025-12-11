@@ -14,15 +14,12 @@ class ExemplaireLivre
         $this->livre = $livre;
         $this->idUnique = bin2hex(random_bytes(16));
     }
-//clé d'entrée pour la private __Construc
     public static function creer(Livre $livre): self
     {
-        // 'interieur de la classe, utilisation de 'new' avec le constructeur privé
         return new self($livre);
     }
 
 
-    //Function
     public function estDisponible(): bool
     {
         return !$this->estEmprunte;
@@ -48,6 +45,8 @@ class ExemplaireLivre
     {
         return $this->livre;
     }
+
+    
 
 }
 

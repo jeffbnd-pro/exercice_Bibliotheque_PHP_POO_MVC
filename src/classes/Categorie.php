@@ -17,7 +17,6 @@ class Categorie
 
     public function getLibelle(): string
     {
-        // valeur libelle(Enum Categorie)
         return $this->libelle->value;
     }
 }

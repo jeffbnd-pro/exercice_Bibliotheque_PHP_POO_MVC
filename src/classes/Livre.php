@@ -18,11 +18,9 @@ class Livre
         $this->auteur = $auteur;
         $this->categorie = $categorie;
 
-        // Incrémentation du compteur statique via self::
-        //self::$nbLivresCrees++;
+        self::$nbLivresCrees++;
         
-        // Màj de la liste des livres de l'auteur
-        //$auteur->ajouterLivre($this);
+        $auteur->ajouterLivre($this);
     }
 
     public function getDescription(): string
@@ -30,7 +28,6 @@ class Livre
         return "Livre : {$this->titre} (Cat: {$this->categorie->getLibelle()}), écrit par {$this->auteur->getNom()}";
     }
 
-    // méthode statique optionnelle (Compteur : total livres créés)
     public static function getNbLivres(): int
     {
         return self::$nbLivresCrees;
@@ -46,6 +43,7 @@ class Livre
     public function afficherContenu(): string {
         return $this->getDescription();
     }
+   
 }
 ?>
 
