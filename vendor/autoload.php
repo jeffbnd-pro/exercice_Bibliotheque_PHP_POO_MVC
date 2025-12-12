@@ -2,7 +2,9 @@
 
 spl_autoload_register(function ($class) {
     $prefix = 'App\\';
-    $base_dir = __DIR__ . '/../src/';
+    $src_base_dir = __DIR__ . '/../src/';
+    $config_base_dir = __DIR__ . '/../config/';
+    require_once $config_base_dir . 'db.php';
 
     $len = strlen($prefix);
     if (strncmp($prefix, $class, $len) !== 0) {
@@ -11,7 +13,7 @@ spl_autoload_register(function ($class) {
 
     $relative_class = substr($class, $len);
 
-    $file = $base_dir . str_replace('\\', '/', $relative_class) . '.php';
+    $file = $src_base_dir . str_replace('\\', '/', $relative_class) . '.php';
 
     if (file_exists($file)) {
         require_once $file;
