@@ -3,6 +3,7 @@ declare(strict_types=1);
 
 namespace App\classes;
 
+
 abstract class Personne
 {
     protected string $nom;
@@ -12,17 +13,18 @@ abstract class Personne
         $this->nom = $nom;
     }
 
-    public function getNom(): string
-    {
-        return $this->nom;
-    }
-
     public function setNom(string $nom): void
     {
         $this->nom = $nom;
     }
 
-    // force enfants (Auteur, Utilisateur) à définir leur type
+    public function getNom(): string
+    {
+        return $this->nom;
+    }
+
+
+
     abstract public function getType(): string;
 }
 ?>

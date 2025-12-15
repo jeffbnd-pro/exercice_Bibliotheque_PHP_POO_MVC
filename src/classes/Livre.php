@@ -6,8 +6,6 @@ namespace App\classes;
 class Livre
 {
     private string $titre;
-    
-    //Livre -> forcé d'avoir auteur et categori
     private Auteur $auteur;
     private Categorie $categorie;
 
@@ -20,10 +18,8 @@ class Livre
         $this->auteur = $auteur;
         $this->categorie = $categorie;
 
-        // Incrémentation du compteur statique via self::
         self::$nbLivresCrees++;
         
-        // Mise à jour de la liste des livres de l'auteur (Relation bidirectionnelle)
         $auteur->ajouterLivre($this);
     }
 
@@ -32,15 +28,22 @@ class Livre
         return "Livre : {$this->titre} (Cat: {$this->categorie->getLibelle()}), écrit par {$this->auteur->getNom()}";
     }
 
-    // Getter statique
     public static function getNbLivres(): int
     {
         return self::$nbLivresCrees;
     }
 
-    // Getters standard
-    public function getTitre(): string { return $this->titre; }
-    public function getAuteur(): Auteur { return $this->auteur; }
+    public function getTitre(): string { 
+        return $this->titre; 
+    }
+    public function getAuteur(): Auteur { 
+        return $this->auteur; 
+    }
+
+    public function afficherContenu(): string {
+        return $this->getDescription();
+    }
+   
 }
 ?>
 

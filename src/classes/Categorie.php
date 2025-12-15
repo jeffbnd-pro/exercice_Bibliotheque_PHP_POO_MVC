@@ -1,3 +1,28 @@
+<?php
+declare(strict_types=1);
+
+namespace App\classes;
+
+use App\enums\CategorieEnum;
+
+class Categorie
+{
+
+    private CategorieEnum $libelle;
+
+    public function __construct(CategorieEnum $libelle)
+    {
+        $this->libelle = $libelle;
+    }
+
+    public function getLibelle(): string
+    {
+        return $this->libelle->value;
+    }
+}
+
+?>
+
 <!--
 
 2. Catégorie
