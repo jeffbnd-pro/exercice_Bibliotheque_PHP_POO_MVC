@@ -35,7 +35,6 @@ class ExemplaireLivre
         $this->estEmprunte = false;
     }
     
-    //Getters
     public function getId(): string
     {
         return $this->idUnique;
