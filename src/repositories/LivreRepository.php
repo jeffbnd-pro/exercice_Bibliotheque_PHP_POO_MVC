@@ -14,7 +14,6 @@ class LivreRepository
     public function findAll(): array
     {
         $pdo = Database::getConnection();
-        // Jointure pour récupérer le nom de l'auteur et la catégorie
         $sql = "SELECT l.id, l.titre, a.nom as auteur_nom, c.libelle as categorie_libelle 
                 FROM livres l
                 JOIN auteurs a ON l.auteur_id = a.id

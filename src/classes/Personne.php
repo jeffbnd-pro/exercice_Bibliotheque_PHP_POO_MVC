@@ -4,7 +4,6 @@ declare(strict_types=1);
 namespace App\classes;
 
 
-//classe abstraite
 abstract class Personne
 {
     protected string $nom;
@@ -14,13 +13,11 @@ abstract class Personne
         $this->nom = $nom;
     }
 
-    //Setter pour nom de la personne
     public function setNom(string $nom): void
     {
         $this->nom = $nom;
     }
 
-    //Getter pour nom de la personne
     public function getNom(): string
     {
         return $this->nom;
@@ -28,7 +25,6 @@ abstract class Personne
 
 
 
-    // force enfants (Auteur, Utilisateur) à définir leur type
     abstract public function getType(): string;
 }
 ?>
